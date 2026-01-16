@@ -38,7 +38,6 @@ def contact(request):
                     'message': 'Please correct the errors in the form.'
                 })
 
-    return render(request, 'core/contact.html', {'form': ContactForm()})
 
 
 def submit_testimonial(request):
@@ -51,4 +50,3 @@ def submit_testimonial(request):
     else:
         form = TestimonialForm()
 
-    return render(request, 'core/submit_testimonial.html', {'form': form})
