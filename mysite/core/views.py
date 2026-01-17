@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import JsonResponse
-from .forms import ContactForm, TestimonialForm
+from .forms import ContactForm
 from .models import MenuItem, Testimonial, GalleryImage
 
 
@@ -40,13 +40,5 @@ def contact(request):
 
 
 
-def submit_testimonial(request):
-    if request.method == 'POST':
-        form = TestimonialForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Thank you! Your testimonial has been submitted and is pending approval.')
-            return redirect('index')
-    else:
-        form = TestimonialForm()
+
 
